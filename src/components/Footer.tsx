@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="flex flex-col items-center md:items-start">
-            <img src={logo} alt="ROAR Exim Company" className="h-16 w-auto mb-4" />
+            <img src={logo} alt="ROAR Exim Company" className="h-16 w-auto mb-4 logo-enhanced" />
             <p className="text-gray-300 text-sm text-center md:text-left">
               Premium quality exports since 2025
             </p>
