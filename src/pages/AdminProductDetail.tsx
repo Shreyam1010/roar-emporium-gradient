@@ -7,6 +7,7 @@ import { Package, ArrowLeft } from "lucide-react";
 import AdminHeader from "@/components/AdminHeader";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
+import { getProductImage } from "@/lib/productImages";
 
 const AdminProductDetail = () => {
   const { id } = useParams();
@@ -122,7 +123,7 @@ const AdminProductDetail = () => {
           {/* Product Image */}
           <div className="flex justify-center relative">
             <img
-              src={product.image_url}
+              src={getProductImage(product.image_url)}
               alt={product.name}
               className={`w-full max-w-2xl h-auto rounded-xl shadow-2xl object-cover ${!product.in_stock ? 'grayscale opacity-60' : ''}`}
             />

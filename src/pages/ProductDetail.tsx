@@ -7,6 +7,7 @@ import AdminNav from "@/components/AdminNav";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import EnquiryForm from "@/components/EnquiryForm";
+import { getProductImage } from "@/lib/productImages";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -69,7 +70,7 @@ const ProductDetail = () => {
           {/* Product Image */}
           <div className="flex justify-center">
             <img
-              src={product.image_url}
+              src={getProductImage(product.image_url)}
               alt={product.name}
               className="w-full max-w-2xl h-auto rounded-xl shadow-2xl object-cover"
             />
