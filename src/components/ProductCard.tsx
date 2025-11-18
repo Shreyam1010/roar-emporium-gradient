@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { getProductImage } from "@/lib/productImages";
 
 interface ProductCardProps {
   id: string;
@@ -15,7 +16,7 @@ const ProductCard = ({ id, name, image, inStock = true }: ProductCardProps) => {
     <Card className={`group overflow-hidden bg-card hover:shadow-xl transition-all duration-300 rounded-xl border-border ${!inStock ? 'opacity-60' : ''}`}>
       <div className="aspect-square overflow-hidden bg-muted relative">
         <img
-          src={image}
+          src={getProductImage(image)}
           alt={name}
           className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${!inStock ? 'grayscale' : ''}`}
         />
