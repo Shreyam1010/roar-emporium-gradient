@@ -45,12 +45,12 @@ const Navbar = () => {
   return (
     <nav className="bg-gradient-premium sticky top-0 z-50 shadow-lg">
       <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-center gap-8">
           <Link to="/" className="flex items-center space-x-3">
             <img src={logo} alt="ROAR Exim Company" className="h-12 w-auto logo-enhanced" />
           </Link>
           
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="flex items-center space-x-8">
             <Link
               to="/"
               className="text-white hover:text-gray-300 transition-colors duration-300 font-medium"
