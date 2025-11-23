@@ -75,14 +75,6 @@ const Navbar = () => {
             >
               Contact Us
             </Link>
-            {!isLoading && (
-              <Link
-                to={isAdmin ? "/admin/dashboard" : "/admin/login"}
-                className="text-white hover:text-gray-300 transition-colors duration-300 font-medium"
-              >
-                {isAdmin ? "Admin Side" : "Admin"}
-              </Link>
-            )}
           </div>
         </div>
       </div>
