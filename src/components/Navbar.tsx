@@ -43,7 +43,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-premium sticky top-0 z-50 shadow-lg">
+    <nav className="bg-gradient-start/80 backdrop-blur-md sticky top-0 z-50 shadow-lg border-b border-white/10">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-center gap-8">
           <Link to="/" className="flex items-center space-x-3">
