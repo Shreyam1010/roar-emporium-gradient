@@ -44,7 +44,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-premium text-white py-12 mt-20">
+    <footer className="bg-gradient-end/90 backdrop-blur-md text-white py-12 mt-20 border-t border-white/10">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="flex flex-col items-center md:items-start">
