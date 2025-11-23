@@ -1,4 +1,5 @@
 import logo from "@/assets/roar-logo.png";
+import { Instagram, Linkedin, Facebook, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -29,6 +30,50 @@ const Footer = () => {
               <li>Phone: +1 234 567 8900</li>
               <li>Address: Export Hub, Business District</li>
             </ul>
+          </div>
+        </div>
+        
+        <div className="border-t border-gray-600 py-6">
+          <div className="flex flex-col items-center space-y-4">
+            <h3 className="text-lg font-semibold text-white">Follow Us</h3>
+            <div className="flex space-x-6">
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-300 hover:text-white transition-colors duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram size={24} />
+              </a>
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-300 hover:text-white transition-colors duration-300"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-300 hover:text-white transition-colors duration-300"
+                aria-label="Facebook"
+              >
+                <Facebook size={24} />
+              </a>
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-300 hover:text-white transition-colors duration-300"
+                aria-label="Twitter"
+              >
+                <Twitter size={24} />
+              </a>
+            </div>
           </div>
         </div>
         
