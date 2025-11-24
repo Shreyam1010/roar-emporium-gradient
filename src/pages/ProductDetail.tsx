@@ -57,33 +57,33 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-premium">
+    <div className="min-h-screen bg-gradient-warm texture-overlay">
       <AdminNav />
       <Navbar />
       
       <div className="container mx-auto px-6 py-12">
-        <Button asChild variant="ghost" className="mb-6">
-          <Link to="/products">← Back to Products</Link>
+        <Button asChild variant="ghost" className="mb-6 hover:bg-accent/10 transition-all duration-300">
+          <Link to="/products" className="font-sans">← Back to Products</Link>
         </Button>
 
         <div className="max-w-5xl mx-auto space-y-8">
           {/* Product Image */}
-          <div className="flex justify-center">
+          <div className="flex justify-center animate-fade-up">
             <img
               src={getProductImage(product.image_url)}
               alt={product.name}
-              className="w-full max-w-2xl h-auto rounded-xl shadow-2xl object-cover"
+              className="w-full max-w-2xl h-auto rounded-2xl shadow-2xl object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
 
           {/* Product Info */}
-          <div className="text-center space-y-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground">
+          <div className="text-center space-y-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            <h1 className="text-4xl lg:text-5xl font-display font-bold text-foreground">
               {product.name}
             </h1>
             
             {product.description && (
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-sans">
                 {product.description}
               </p>
             )}
@@ -91,12 +91,12 @@ const ProductDetail = () => {
 
           {/* Features */}
           {product.features && product.features.length > 0 && (
-            <div className="bg-card rounded-xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Features</h2>
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-accent/10 hover-lift animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              <h2 className="text-2xl font-display font-bold text-foreground mb-4">Features</h2>
               <ul className="space-y-3">
                 {product.features.map((feature: string, index: number) => (
-                  <li key={index} className="flex items-start gap-3 text-card-foreground">
-                    <span className="text-primary mt-1">•</span>
+                  <li key={index} className="flex items-start gap-3 text-card-foreground font-sans">
+                    <span className="text-accent mt-1 text-xl">•</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -106,15 +106,15 @@ const ProductDetail = () => {
 
           {/* Specifications */}
           {product.specifications && (
-            <div className="bg-card rounded-xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Specifications</h2>
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-accent/10 hover-lift animate-fade-up" style={{ animationDelay: '0.3s' }}>
+              <h2 className="text-2xl font-display font-bold text-foreground mb-4">Specifications</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {Object.entries(product.specifications).map(([key, value]) => (
                   <div key={key} className="flex justify-between border-b border-border pb-2">
-                    <span className="font-medium text-card-foreground capitalize">
+                    <span className="font-sans font-medium text-card-foreground capitalize">
                       {key.replace(/_/g, " ")}:
                     </span>
-                    <span className="text-muted-foreground">{value as string}</span>
+                    <span className="text-muted-foreground font-sans">{value as string}</span>
                   </div>
                 ))}
               </div>
@@ -122,11 +122,11 @@ const ProductDetail = () => {
           )}
 
           {/* Enquire Now Button */}
-          <div className="flex justify-center pt-8">
+          <div className="flex justify-center pt-8 animate-fade-up" style={{ animationDelay: '0.4s' }}>
             <Button
               size="lg"
               onClick={() => setShowEnquiry(true)}
-              className="w-full max-w-md rounded-lg bg-primary text-primary-foreground hover:bg-primary/90"
+              className="w-full max-w-md rounded-2xl bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               Enquire Now
             </Button>

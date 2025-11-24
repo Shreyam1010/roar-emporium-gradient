@@ -8,84 +8,93 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* Spice-inspired color palette */
+    --background: 40 30% 99%;
     --foreground: 0 0% 15%;
 
-    --card: 0 0% 98%;
+    --card: 0 0% 100%;
     --card-foreground: 0 0% 15%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 15%;
 
-    --primary: 0 0% 14%;
-    --primary-foreground: 0 0% 98%;
+    /* Pepper black for primary */
+    --primary: 0 0% 15%;
+    --primary-foreground: 40 30% 99%;
 
-    --secondary: 0 0% 22%;
-    --secondary-foreground: 0 0% 98%;
+    /* Turmeric gold for secondary */
+    --secondary: 45 93% 55%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 0 0% 22%;
-    --accent-foreground: 0 0% 98%;
+    /* Saffron accent */
+    --accent: 40 96% 50%;
+    --accent-foreground: 0 0% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    /* Chili red for destructive */
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 40 30% 99%;
 
-    --border: 0 0% 85%;
-    --input: 0 0% 85%;
-    --ring: 0 0% 15%;
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 40 96% 50%;
 
-    --radius: 0.75rem;
+    --radius: 1.5rem;
     
-    --gradient-start: 180 4% 14%;
-    --gradient-end: 180 4% 26%;
+    /* Warm gradient from cream to soft saffron */
+    --gradient-start: 40 50% 97%;
+    --gradient-end: 40 80% 92%;
+    
+    /* Additional spice colors */
+    --coriander: 150 40% 45%;
+    --saffron: 40 96% 50%;
+    --turmeric: 45 93% 55%;
+    --chili: 0 80% 55%;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 0 0% 14%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 10%;
+    --foreground: 40 30% 99%;
 
-    --card: 0 0% 18%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 15%;
+    --card-foreground: 40 30% 99%;
 
-    --popover: 0 0% 14%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 40 30% 99%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 14%;
+    --primary: 40 96% 50%;
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 0 0% 22%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 45 93% 55%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 22%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 40 15% 70%;
 
-    --accent: 0 0% 22%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 40 96% 50%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 40 30% 99%;
 
     --border: 0 0% 22%;
     --input: 0 0% 22%;
-    --ring: 0 0% 83%;
+    --ring: 40 96% 50%;
+    
+    --gradient-start: 0 0% 10%;
+    --gradient-end: 0 0% 18%;
+    
     --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: 0 0% 14%;
@@ -94,9 +103,6 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 0 0% 95%;
     --sidebar-border: 0 0% 16%;
     --sidebar-ring: 0 0% 60%;
-    
-    --gradient-start: 180 4% 14%;
-    --gradient-end: 180 4% 26%;
   }
 }
 
@@ -112,16 +118,65 @@ All colors MUST be HSL.
 
 @layer components {
   .logo-enhanced {
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3)) 
-            drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4))
+    filter: drop-shadow(0 0 25px rgba(255, 184, 28, 0.4)) 
+            drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3))
             brightness(1.1);
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .logo-enhanced:hover {
-    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.5)) 
-            drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5))
-            brightness(1.15);
-    transform: scale(1.02);
+    filter: drop-shadow(0 0 40px rgba(255, 184, 28, 0.6)) 
+            drop-shadow(0 6px 20px rgba(0, 0, 0, 0.4))
+            brightness(1.2);
+    transform: scale(1.05) translateY(-2px);
+  }
+  
+  /* Scroll reveal animations */
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Hover lift effect */
+  .hover-lift {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Premium card styling */
+  .card-premium {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 250, 240, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 184, 28, 0.1);
+  }
+  
+  /* Subtle texture overlay */
+  .texture-overlay {
+    position: relative;
+  }
+  
+  .texture-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(255, 184, 28, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255, 159, 28, 0.03) 0%, transparent 50%);
+    pointer-events: none;
   }
 }

@@ -43,7 +43,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-start/80 backdrop-blur-md sticky top-0 z-50 shadow-lg border-b border-white/10">
+    <nav className="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-lg border-b border-accent/20">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-center gap-8">
           <Link to="/" className="flex items-center space-x-3">
@@ -53,25 +53,25 @@ const Navbar = () => {
           <div className="flex items-center space-x-8">
             <Link
               to="/"
-              className="text-white hover:text-gray-300 transition-colors duration-300 font-medium"
+              className="text-foreground hover:text-accent transition-all duration-300 font-sans font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300"
             >
               Home
             </Link>
             <Link
               to="/products"
-              className="text-white hover:text-gray-300 transition-colors duration-300 font-medium"
+              className="text-foreground hover:text-accent transition-all duration-300 font-sans font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300"
             >
               Products
             </Link>
             <Link
               to="/about"
-              className="text-white hover:text-gray-300 transition-colors duration-300 font-medium"
+              className="text-foreground hover:text-accent transition-all duration-300 font-sans font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300"
             >
               About Us
             </Link>
             <Link
               to="/contact"
-              className="text-white hover:text-gray-300 transition-colors duration-300 font-medium"
+              className="text-foreground hover:text-accent transition-all duration-300 font-sans font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300"
             >
               Contact Us
             </Link>
