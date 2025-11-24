@@ -44,92 +44,115 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-end/90 backdrop-blur-md text-white py-12 mt-20 border-t border-white/10">
+    <footer className="bg-primary text-primary-foreground py-12 mt-20 border-t border-accent/20">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="flex flex-col items-center md:items-start">
-            <img src={logo} alt="ROAR Exim Company" className="h-16 w-auto mb-4 logo-enhanced" />
-            <p className="text-gray-300 text-sm text-center md:text-left">
-              Premium quality exports since 2025
+            <img src={logo} alt="ROAR Exim" className="h-16 mb-4 brightness-110" />
+            <p className="text-primary-foreground/80 text-center md:text-left font-sans">
+              Your trusted partner in global export excellence
             </p>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="/products" className="hover:text-white transition-colors">Products</a></li>
-              <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
+            <h3 className="text-xl font-display font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/" className="text-primary-foreground/80 hover:text-accent transition-colors duration-300 font-sans">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/products" className="text-primary-foreground/80 hover:text-accent transition-colors duration-300 font-sans">
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-primary-foreground/80 hover:text-accent transition-colors duration-300 font-sans">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors duration-300 font-sans">
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2 text-gray-300 text-sm">
+            <h3 className="text-xl font-display font-semibold mb-4">Contact</h3>
+            <ul className="space-y-2 text-primary-foreground/80 font-sans">
               <li>Email: info@roarexim.com</li>
               <li>Phone: +1 234 567 8900</li>
-              <li>Address: Export Hub, Business District</li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-gray-600 py-6">
-          <div className="flex flex-col items-center space-y-4">
-            <h3 className="text-lg font-semibold text-white">Follow Us</h3>
-            <div className="flex space-x-6">
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-gray-300 hover:text-white transition-colors duration-300"
-                aria-label="Instagram"
-              >
-                <Instagram size={24} />
-              </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-gray-300 hover:text-white transition-colors duration-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={24} />
-              </a>
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-gray-300 hover:text-white transition-colors duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook size={24} />
-              </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-gray-300 hover:text-white transition-colors duration-300"
-                aria-label="Twitter"
-              >
-                <Twitter size={24} />
-              </a>
-            </div>
+        {/* Social Media Section */}
+        <div className="border-t border-primary-foreground/20 pt-8 mb-8">
+          <h3 className="text-xl font-display font-semibold text-center mb-6">Follow Us</h3>
+          <div className="flex justify-center gap-6">
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary-foreground/80 hover:text-accent hover:scale-110 transition-all duration-300"
+              aria-label="Instagram"
+            >
+              <Instagram size={28} />
+            </a>
+            <a 
+              href="https://linkedin.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary-foreground/80 hover:text-accent hover:scale-110 transition-all duration-300"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={28} />
+            </a>
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary-foreground/80 hover:text-accent hover:scale-110 transition-all duration-300"
+              aria-label="Facebook"
+            >
+              <Facebook size={28} />
+            </a>
+            <a 
+              href="https://twitter.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary-foreground/80 hover:text-accent hover:scale-110 transition-all duration-300"
+              aria-label="Twitter"
+            >
+              <Twitter size={28} />
+            </a>
           </div>
         </div>
         
-        <div className="border-t border-gray-600 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-            <p>&copy; 2025 ROAR Exim Company. All rights reserved.</p>
-            {!isLoading && (
-              <Link
-                to={isAdmin ? "/admin/dashboard" : "/admin/login"}
-                className="text-gray-400 hover:text-white transition-colors duration-300 mt-2 md:mt-0"
-              >
-                {isAdmin ? "Admin Panel" : "Admin Login"}
-              </Link>
-            )}
-          </div>
+        <div className="border-t border-primary-foreground/20 pt-8 text-center text-primary-foreground/80 font-sans">
+          <p>&copy; 2025 ROAR Exim Company. All rights reserved.</p>
+          {!isLoading && (
+            <div className="mt-4">
+              {isAdmin ? (
+                <Link 
+                  to="/admin/dashboard" 
+                  className="text-primary-foreground/80 hover:text-accent transition-colors duration-300 underline"
+                >
+                  Admin Panel
+                </Link>
+              ) : (
+                <Link 
+                  to="/admin/login" 
+                  className="text-primary-foreground/80 hover:text-accent transition-colors duration-300 underline"
+                >
+                  Admin Login
+                </Link>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </footer>
