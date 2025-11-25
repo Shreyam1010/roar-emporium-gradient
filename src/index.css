@@ -179,4 +179,14 @@ All colors MUST be HSL.
       radial-gradient(circle at 80% 80%, rgba(255, 159, 28, 0.03) 0%, transparent 50%);
     pointer-events: none;
   }
+  
+  /* Floating animation for botanical stickers */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
 }
