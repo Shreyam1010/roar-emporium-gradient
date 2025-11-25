@@ -7,6 +7,13 @@ import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import AdminNav from "@/components/AdminNav";
 import logo from "@/assets/roar-logo.png";
+import fernLeaves from "@/assets/sticker-fern-leaves.png";
+import curryLeaves from "@/assets/sticker-curry-leaves.png";
+import corianderLeaves from "@/assets/sticker-coriander-leaves.png";
+import bayLeaves from "@/assets/sticker-bay-leaves.png";
+import gingerRoot from "@/assets/sticker-ginger-root.png";
+import cinnamonSticks from "@/assets/sticker-cinnamon-sticks.png";
+import chiliPeppers from "@/assets/sticker-chili-peppers.png";
 
 const Home = () => {
   const { data: featuredProducts = [] } = useQuery({
@@ -31,6 +38,33 @@ const Home = () => {
       {/* Hero Section */}
       <section className="py-24 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,184,28,0.08),transparent_70%)]"></div>
+        
+        {/* Decorative Botanical Stickers */}
+        <img 
+          src={fernLeaves} 
+          alt="" 
+          className="absolute top-10 left-10 w-32 lg:w-48 opacity-20 animate-[float_6s_ease-in-out_infinite]" 
+          style={{ animationDelay: '0s' }}
+        />
+        <img 
+          src={curryLeaves} 
+          alt="" 
+          className="absolute top-20 right-10 w-24 lg:w-36 opacity-15 animate-[float_8s_ease-in-out_infinite]" 
+          style={{ animationDelay: '1s' }}
+        />
+        <img 
+          src={corianderLeaves} 
+          alt="" 
+          className="absolute bottom-20 left-20 w-28 lg:w-40 opacity-20 animate-[float_7s_ease-in-out_infinite]" 
+          style={{ animationDelay: '2s' }}
+        />
+        <img 
+          src={cinnamonSticks} 
+          alt="" 
+          className="absolute bottom-10 right-20 w-20 lg:w-32 opacity-15 animate-[float_9s_ease-in-out_infinite]" 
+          style={{ animationDelay: '1.5s' }}
+        />
+        
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col items-center justify-center text-center space-y-8 max-w-4xl mx-auto animate-fade-up">
             <img src={logo} alt="ROAR Exim" className="w-full max-w-sm h-auto logo-enhanced" />
@@ -48,8 +82,28 @@ const Home = () => {
       </section>
 
       {/* Products Preview Section */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-6">
+      <section className="py-20 relative overflow-hidden">
+        {/* Decorative Botanical Stickers */}
+        <img 
+          src={bayLeaves} 
+          alt="" 
+          className="absolute top-10 right-10 w-28 lg:w-40 opacity-10 animate-[float_7s_ease-in-out_infinite]" 
+          style={{ animationDelay: '0.5s' }}
+        />
+        <img 
+          src={gingerRoot} 
+          alt="" 
+          className="absolute bottom-20 left-10 w-24 lg:w-36 opacity-15 animate-[float_8s_ease-in-out_infinite]" 
+          style={{ animationDelay: '2s' }}
+        />
+        <img 
+          src={chiliPeppers} 
+          alt="" 
+          className="absolute bottom-10 right-1/4 w-20 lg:w-32 opacity-10 animate-[float_6s_ease-in-out_infinite]" 
+          style={{ animationDelay: '1s' }}
+        />
+        
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12 animate-fade-up">
             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
               Our Premium Products
