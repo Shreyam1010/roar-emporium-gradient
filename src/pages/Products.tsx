@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import AdminNav from "@/components/AdminNav";
+import { useEffect, useRef } from "react";
 
 const Products = () => {
   const { data: products = [], isLoading } = useQuery({
@@ -18,6 +19,40 @@ const Products = () => {
       return data;
     },
   });
+
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    // Create intersection observer for scroll animations
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-card-entrance");
+            entry.target.classList.remove("card-hidden");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      }
+    );
+
+    // Observe all product cards
+    const cards = document.querySelectorAll(".product-card-wrapper");
+    cards.forEach((card) => {
+      if (observerRef.current) {
+        observerRef.current.observe(card);
+      }
+    });
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [products]);
 
   return (
     <div className="min-h-screen bg-gradient-warm texture-overlay">
@@ -45,7 +80,11 @@ const Products = () => {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {products.map((product, index) => (
-                <div key={product.id} className="animate-card-entrance" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div 
+                  key={product.id} 
+                  className="product-card-wrapper card-hidden" 
+                  style={{ animationDelay: `${(index % 8) * 0.08}s` }}
+                >
                   <ProductCard id={product.id} name={product.name} image={product.image_url} inStock={product.in_stock} />
                 </div>
               ))}
