@@ -45,7 +45,7 @@ const Products = () => {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {products.map((product, index) => (
-                <div key={product.id} className="animate-fade-up" style={{ animationDelay: `${index * 0.05}s` }}>
+                <div key={product.id} className="animate-card-entrance" style={{ animationDelay: `${index * 0.1}s` }}>
                   <ProductCard id={product.id} name={product.name} image={product.image_url} inStock={product.in_stock} />
                 </div>
               ))}
